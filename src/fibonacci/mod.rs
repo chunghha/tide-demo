@@ -10,11 +10,11 @@ struct Fibonacci {
 }
 
 trait IFibonacci {
-  fn generate(n: usize) -> Fibonacci;
+  fn generate(n: usize) -> Self;
 }
 
 impl IFibonacci for Fibonacci {
-  fn generate(n: usize) -> Fibonacci {
+  fn generate(n: usize) -> Self {
     let start = Instant::now();
     let fib = Fib::fib(n);
     let duration = Instant::now() - start;
@@ -40,7 +40,7 @@ impl IFib for Fib {
 }
 
 pub async fn get_fibonacci(req: Request<()>) -> tide::Result<Response> {
-  let n: usize = req.param("n").unwrap_or(0);
+  let n: usize = req.param("n")?.parse().unwrap_or(0);
 
   let mut res = Response::new(200);
   res.set_body(Body::from_json(&Fibonacci::generate(n))?);
