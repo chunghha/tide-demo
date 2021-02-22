@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  tide-demo-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+     - 8080:8080
+    networks:
+    - tide-demo-api-net
+
+networks:
+  tide-demo-api-net:
+    driver: bridge
