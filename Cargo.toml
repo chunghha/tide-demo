@@ -1,17 +1,17 @@
 [package]
 name = "tide-demo"
-version = "0.1.1"
+version = "0.2.0"
 authors = ["Chris Ha <chunghha@users.noreply.github.com>"]
-edition = "2018"
+edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow = "1.0.38"
-async-std = { version = "1.9.0", features = ["attributes"] }
-futures-util = "0.3.12" # to avoid thee compile error with futures_core::core_reexport
+anyhow = "1.0.66"
+async-std = { version = "1.12.0", features = ["attributes"] }
+futures-util = "0.3.25" # to avoid the compile error with futures_core::core_reexport
 lazy_static = "1.4.0"
-serde = "1.0.123"
-serde_json = "1.0.62"
+serde = "1.0.147"
+serde_json = "1.0.89"
 tide = "0.16.0"
-tide-tracing = "0.0.8"
+tide-tracing = "0.0.12"
